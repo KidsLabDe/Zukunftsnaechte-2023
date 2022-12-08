@@ -3,7 +3,7 @@ version: "2.1"
 services:
   minetest:
     image: ghcr.io/linuxserver/minetest:latest
-    container_name: minetest_tutorial
+    container_name: minetest_zfn
     environment:
       - PUID=1000
       - PGID=1000
