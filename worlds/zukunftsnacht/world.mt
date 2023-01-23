@@ -4,10 +4,9 @@ mod_storage_backend = sqlite3
 auth_backend = sqlite3
 player_backend = sqlite3
 backend = leveldb
-gameid = minetest
+gameid = antigrief
 world_name = zukunftsnacht
 server_announce = false
-
 load_mod_worldeditadditions_commands = true
 load_mod_worldeditadditions = true
 load_mod_worldedit = true
