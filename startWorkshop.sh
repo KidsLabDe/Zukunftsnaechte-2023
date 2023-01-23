@@ -1,5 +1,10 @@
 #/bin/bash
+read -p "Welche Welt willst Du Starten? (01, 02, 03 etc.) : " world
+echo $world
+export WORLDNAME=$world
 cp main-config/workshop.conf main-config/minetest.conf
-docker-compose -f workshop.yaml stop
+rm mods/world2minetest/map.dat
+cp worlds/$WORLDNAME*/world2minetest/map.dat mods/world2minetest/
+#docker-compose -f workshop-old.yaml stop
 rm debug.txt
-docker-compose -f workshop.yaml up
+docker-compose -f workshop-old.yaml up
