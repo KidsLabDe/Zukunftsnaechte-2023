@@ -8,7 +8,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Berlin
-      - CLI_ARGS=" --worldname Tutorial --world worlds --port 30000"
+      - CLI_ARGS=" --worldname KidsLab --world worlds --port 30000"
     volumes:
       - ./:/config/.minetest
     ports:
