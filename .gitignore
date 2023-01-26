@@ -2,3 +2,6 @@ debug.txt
 map.db/*
 worlds/Tutorial
 .DS_Store
+w2mt/projects
+w2mt/world2minetest/map.dat
+*.log
