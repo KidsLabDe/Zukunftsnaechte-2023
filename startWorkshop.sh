@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cd /opt/minetest
+ls worlds
 read -p "Welche Welt willst Du Starten? (01, 02, 03 etc.) : " world
 echo $world
 export WORLDNAME=$world
