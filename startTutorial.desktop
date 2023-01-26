@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Exec=/opt/minetest/startTutorial.sh
+Name=Starte Tutorial
+GenericName=startTutorial
+Comment=Started den Minetest-Server im Tutorial-Modus
+Encoding=UTF-8
+Terminal=true
+Type=Application
+Categories=Application;Network;
