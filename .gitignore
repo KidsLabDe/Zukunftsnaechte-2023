@@ -5,3 +5,4 @@ worlds/Tutorial
 w2mt/projects
 w2mt/world2minetest/map.dat
 *.log
+players.sqlite
