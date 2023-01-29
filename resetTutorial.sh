@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /opt/minetest
+#cd /opt/minetest
 read -p "Dieses Script setzt die Tutorial-Welt zurück. Bist du sicher? Mit 'J' bestätigen!" -n 1 -r
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Jj]$ ]]

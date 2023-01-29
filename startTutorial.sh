@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /opt/minetest
+# cd /opt/minetest
 cp main-config/tutorial.conf main-config/minetest.conf
 docker-compose -f tutorial.yaml stop
 rm debug.txt

@@ -1,6 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Exec=/opt/minetest/startWorkshop.sh
+Path=/opt/minetest
 Name=Starte Workshop
 GenericName=startWorkshop
 Comment=Started den Minetest-Server im Workshop-Modus

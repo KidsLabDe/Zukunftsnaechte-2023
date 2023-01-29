@@ -1,6 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Exec=/opt/minetest/resetTutorial.sh
+Path=/opt/minetest
 Name="Tutorial zurueckstzen"
 GenericName=resetTutorial
 Comment=Resettet die Tutorial-Welt
