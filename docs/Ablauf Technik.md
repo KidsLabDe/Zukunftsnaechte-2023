@@ -1,5 +1,16 @@
 # Ablauf ZFN
 
+# Vorbereitungen Welt
+
+1. neuen Ordner erstellen: "11-NameStadt"
+2. In "world.mt" "world_name = 11" auf richtige Nummer setzen
+3. map.dat erstellen: ...
+4. map.dat in "11-NameStadt/world2minetest/" kopieren
+5. 
+
+git clone https://github.com/KidsLabDe/minetest-zfn-docker.git
+git submodule init
+git submodule update 
 
 
 # Vorbereitungen an der Schule, vor Beginn der Veranstaltung
