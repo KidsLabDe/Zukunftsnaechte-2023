@@ -8,6 +8,11 @@
 4. map.dat in "11-NameStadt/world2minetest/" kopieren
 5. 
 
+git clone https://github.com/KidsLabDe/minetest-zfn-docker.git
+git submodule init
+git submodule update 
+
+
 # Vorbereitungen an der Schule, vor Beginn der Veranstaltung
 
 ### Raume etc.
