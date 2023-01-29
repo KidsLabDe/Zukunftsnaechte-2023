@@ -2,6 +2,11 @@
 
 
 
+git clone https://github.com/KidsLabDe/minetest-zfn-docker.git
+git submodule init
+git submodule update 
+
+
 # Vorbereitungen an der Schule, vor Beginn der Veranstaltung
 
 ### Raume etc.
