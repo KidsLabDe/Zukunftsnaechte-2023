@@ -11,10 +11,10 @@
 
 1x Maus
 1x Bluetooth Box
+10x Maus / Cherry
 
 ## Laptop-Tasche
 1x Lenovo Laptop (Server)
 1x Netzteil USB-C Lenovo
 1x Mikrofon
-
 

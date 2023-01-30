@@ -19,3 +19,11 @@ nein:
 - Immer Ports 2-5 nehmen
 
 
+# Abends - Ende
+git add . & git commit -m "Abends ende"
+
+# aufnahme
+
+- alle teams nacheinander
+- telefonzellen setzen
+- aufnahme & nach Nr. und Team benennen
