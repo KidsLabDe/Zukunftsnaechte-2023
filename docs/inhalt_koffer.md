@@ -1,20 +1,25 @@
 # Netzwerk-Koffer
 
 
-3x MikroTik WLAN Router
-3x Netzteil WLAN Router
-2x LAN Kabel 30m
-2x LAN Kabel 2m
-1x 3-fach Steckdose
+- 3x MikroTik WLAN Router
+- 3x Netzteil WLAN Router
+- 2x LAN Kabel 30m
+- 2x LAN Kabel 2m
+- 1x 3-fach Steckdose
 
 # Server-Koffer
 
+<<<<<<< HEAD
 1x Maus
 1x Bluetooth Box
 10x Maus / Cherry
+=======
+- 1x Maus
+- 1x Bluetooth Box
+>>>>>>> fd57917d7e61473c4ca1567edfcaa95b0a805f17
 
 ## Laptop-Tasche
-1x Lenovo Laptop (Server)
-1x Netzteil USB-C Lenovo
-1x Mikrofon
+- 1x Lenovo Laptop (Server)
+- 1x Netzteil USB-C Lenovo
+- 1x Mikrofon
 
