@@ -9,12 +9,17 @@
 
 # Server-Koffer
 
+<<<<<<< HEAD
+1x Maus
+1x Bluetooth Box
+10x Maus / Cherry
+=======
 - 1x Maus
 - 1x Bluetooth Box
+>>>>>>> fd57917d7e61473c4ca1567edfcaa95b0a805f17
 
 ## Laptop-Tasche
 - 1x Lenovo Laptop (Server)
 - 1x Netzteil USB-C Lenovo
 - 1x Mikrofon
-
 
