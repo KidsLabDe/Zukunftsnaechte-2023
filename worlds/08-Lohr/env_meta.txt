@@ -1,7 +1,7 @@
-day_count = 6
+day_count = 8
 lbm_introduction_times = :doors:replace_doors_door_glass~0;:doors:replace_doors_door_obsidian_glass~0;:doors:replace_doors_door_steel~0;:doors:replace_doors_door_wood~0;:doors:replace_xpanes_door_steel_bar~0;:farming:start_nodetimer_cotton~0;:farming:start_nodetimer_wheat~0;default:3dtorch~0;default:convert_saplings_to_node_timer~0;default:upgrade_chest_locked_v2~0;default:upgrade_chest_v2~0;mesecons_pistons:replace_legacy_piston_down~0;mesecons_pistons:replace_legacy_piston_up~0;xpanes:gen2~0;:doors:replace_doors_homedecor_basic_panel~625;:doors:replace_doors_homedecor_carolina~625;:doors:replace_doors_homedecor_closet_mahogany~625;:doors:replace_doors_homedecor_closet_oak~625;:doors:replace_doors_homedecor_exterior_fancy~625;:doors:replace_doors_homedecor_french_mahogany~625;:doors:replace_doors_homedecor_french_oak~625;:doors:replace_doors_homedecor_french_white~625;:doors:replace_doors_homedecor_wood_plain~625;:doors:replace_doors_homedecor_woodglass~625;:doors:replace_doors_homedecor_wrought_iron~625;:homedecor:convert_bathroom_tiles~625;:homedecor:convert_beds~625;:homedecor:convert_curtains~625;:homedecor:convert_desk_lamps~625;:homedecor:convert_doors_3~625;:homedecor:convert_kitchen_cabinets~625;:homedecor:convert_lighting~625;:homedecor:convert_shutters~625;:lrfurn:convert_armchairs~625;:lrfurn:convert_longsofas~625;:lrfurn:convert_sofas~625;signs_road:conpatibility_1~2942;signs_road:conpatibility_2~2942;
 lbm_introduction_times_version = 1
 last_clear_objects_time = 0
 time_of_day = 6000
-game_time = 90530
+game_time = 331320
 EnvArgsEnd
