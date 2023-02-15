@@ -127,10 +127,11 @@ Test mit 40 gleichzeitigen Clients erfolgreich:
 
 
 - Weitere Optionen und Infos dazu:
-  - In der Datei `w2mt.log` findet ihr ein ausführliches Log über die Importe, die ich durchgeführt habt inkl. Fehlermeldungen.
+  - In der Datei `w2mt.log` findet ihr ein ausführliches Log über den letzten Import, den ihr durchgeführt habt inkl. Fehlermeldungen.
   - Mit der Option `-v` oder `--verbose` könnt ihr die Log-Infos auch auf der Konsole angezeigt bekommen.
   - Mit der Option `-q` oder `--query` könnt ihr eine eigene Anfragedatei angeben. Lasst dann die Optionen `-r` sowie `-a` oder `--area` weg.
   - Wenn ihr die Anfragedatei, die schon im Projektordner liegt benutzen wollt, gebt die Option `-r` oder `--reuse_query` an.
+  - wenn ihr die ganzen Projektdateien (Anfrage, Rohdaten, gefilterte Daten, Welt etc.) woanders hin geneieren lassen wollt, könnt ihr den Pfad dahin mit Option `-d <zielpfad>` angeben. Dort wird dann ein Ordner `worlds`angelegt und darin ein Ordner für euer Projekt.
 
 ### python Module
 
