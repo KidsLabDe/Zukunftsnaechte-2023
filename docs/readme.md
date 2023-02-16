@@ -128,6 +128,7 @@ Test mit 40 gleichzeitigen Clients erfolgreich:
 
 - Weitere Optionen und Infos dazu:
   - In der Datei `w2mt.log` findet ihr ein ausführliches Log über den letzten Import, den ihr durchgeführt habt inkl. Fehlermeldungen.
+  - mit der Option `-w` oder `--worldname`könnt ihr den Weltnamen unabhängig von Projektnamen vergeben. Wenn ihr das nicht tut, wird der Projektname auch als Weltname verwendet und die Datei `world.mt`eingesetzt.
   - Mit der Option `-v` oder `--verbose` könnt ihr die Log-Infos auch auf der Konsole angezeigt bekommen.
   - Mit der Option `-q` oder `--query` könnt ihr eine eigene Anfragedatei angeben. Lasst dann die Optionen `-r` sowie `-a` oder `--area` weg.
   - Wenn ihr die Anfragedatei, die schon im Projektordner liegt benutzen wollt, gebt die Option `-r` oder `--reuse_query` an.
