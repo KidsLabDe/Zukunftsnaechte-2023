@@ -104,6 +104,10 @@ Test mit 40 gleichzeitigen Clients erfolgreich:
     - `query.osm` - die Anfrage an Openstreetmap mit euren Koordinaten
     - `osm.json` - die von Openstreetmap geladenen Rohdaten
     - `features_osm.json` - extrahierten Geodaten, die in der generierten Welt dargestellt werden
+	- Der Ordner `world2minetest`, der alle Dateien für die Mod World2Minetest inkl. eurer generierten Karte enthält, nämlich:
+	    - `mods/init.lua` - Startscript für die World2Minetest Mod, das aus den Geodaten die Welt "baut"
+	    - `mods/map.dat` - Enthält die aus den o.g. Features generierten Voxel (Blöcke)
+	    - `worlds/<projectname>/world.mt` - Konfiguration der Welt für Minetest
 
 
   - Im Homeverzeichnis von Minetest die mod und world Dateien (Voraussetzung dafür ist, dass ihr die Umgebungsvariable `MINETEST_GAME_PATH` so definiert habt, dass sie auf das Homeverzeichnis eurer Minetest Installation zeigt):
