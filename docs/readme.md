@@ -105,21 +105,18 @@ Test mit 40 gleichzeitigen Clients erfolgreich:
     - `query.osm` - die Anfrage an Openstreetmap mit euren Koordinaten
     - `osm.json` - die von Openstreetmap geladenen Rohdaten
     - `features_osm.json` - extrahierten Geodaten, die in der generierten Welt dargestellt werden
-	- Der Ordner `world2minetest`, der alle Dateien für die Mod World2Minetest inkl. eurer generierten Karte enthält, nämlich:
-	    - `mods/init.lua` - Startscript für die World2Minetest Mod, das aus den Geodaten die Welt "baut"
-	    - `mods/map.dat` - Enthält die aus den o.g. Features generierten Voxel (Blöcke)
-	    - `worlds/<projectname>/world.mt` - Konfiguration der Welt für Minetest
+    - `world.mt` - Konfiguration der Welt für Minetest
+    - Der Ordner `world2minetest`, der alle Dateien für die Mod World2Minetest inkl. eurer generierten Karte enthält, nämlich:
+      - `init.lua` - Startscript für die World2Minetest Mod, das aus den Geodaten die Welt "baut"
+      - `map.dat` - Enthält die aus den o.g. Features generierten Voxel (Blöcke)
+      - `mod.conf`- Knfigurationsdatei für die Mod world2minetest
 
+Wo liegt dieser Projektordner? Das kommt auf eure Optionen beim Aufruf von w2mt.py an:
+  - Wenn ihr die Option `-d`oder `--minetest_dir`gefolgt von einem Verzeichnispfad angegeben habt, liegt dort innerhlab von `worlds` der neu generierte Projektordner (z. Bsp. `museumsinsel_berlin`)
+  - Wenn ihr `-d` NICHT angegeben habt, aber die Umgebungsvariable `MINETEST_GAME_PATH` definiert habt, wird der Projektordner dort in das Verzeichnis `worlds`gelegt.
+  - Sonst wird der Projektordner im aktuellen Verzechnis (von wo ihr w2mt.py aufgerufen habt) in das Verzeichnis `worlds` gelegt.
 
-  - Im Homeverzeichnis von Minetest die mod und world Dateien (Voraussetzung dafür ist, dass ihr die Umgebungsvariable `MINETEST_GAME_PATH` so definiert habt, dass sie auf das Homeverzeichnis eurer Minetest Installation zeigt):
-
-    <img width="510" alt="Screenshot 2023-01-12 at 11 18 09" src="https://user-images.githubusercontent.com/19528321/212043634-fc81c5cd-c533-4127-ab99-1c8e80164e16.png">
-
-    - `mods/init.lua` - Startscript für die World2Minetest Mod, das aus den Geodaten die Welt "baut"
-    - `mods/map.dat` - Enthält die aus den o.g. Features generierten Voxel (Blöcke)
-    - `worlds/<projectname>/world.mt` - Konfiguration der Welt für Minetest
-
-
+Für lokale Single Player Version:
   - Startet minetest und ihr seht die neue Welt in der Liste:
 
     <img width="829" alt="Screenshot 2023-01-12 at 11 01 04" src="https://user-images.githubusercontent.com/19528321/212037294-eaa4ec9b-ea21-41c5-be21-1d2105d2dfe8.png">
@@ -134,6 +131,7 @@ Test mit 40 gleichzeitigen Clients erfolgreich:
 - Weitere Optionen und Infos dazu:
   - In der Datei `w2mt.log` findet ihr ein ausführliches Log über den letzten Import, den ihr durchgeführt habt inkl. Fehlermeldungen.
   - mit der Option `-w` oder `--worldname`könnt ihr den Weltnamen unabhängig von Projektnamen vergeben. Wenn ihr das nicht tut, wird der Projektname auch als Weltname verwendet und die Datei `world.mt`eingesetzt.
+  - `-b`oder `--backend`gefolgt von `leveldb` (oder anderen Datenbank-Namen) sorgt dafür, dass statt SQlite die effizientere LevelDB verwendet wird. Dies wird entsprechend in der erzeugten `world.mt`eingesetzt.
   - Mit der Option `-v` oder `--verbose` könnt ihr die Log-Infos auch auf der Konsole angezeigt bekommen.
   - Mit der Option `-q` oder `--query` könnt ihr eine eigene Anfragedatei angeben. Lasst dann die Optionen `-r` sowie `-a` oder `--area` weg.
   - Wenn ihr die Anfragedatei, die schon im Projektordner liegt benutzen wollt, gebt die Option `-r` oder `--reuse_query` an.
