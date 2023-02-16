@@ -4,5 +4,8 @@ w2mt.log
 /data_sources/**
 /parsed_data/**
 
+__pycache__
+__pycache__/**
+
 **/features_osm.json
 **/osm.json
