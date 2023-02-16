@@ -99,7 +99,8 @@ Test mit 40 gleichzeitigen Clients erfolgreich:
     `python3 w2mt.py -p museumsinsel_berlin -a '52.52337529920812, 13.392572107274946, 52.51061362911302, 13.41347200727846'`
   - Im Projektordner liegen jetzt alle erforderlichen Dateien:
 
-    <img width="611" alt="Screenshot 2023-01-12 at 11 06 00" src="https://user-images.githubusercontent.com/19528321/212038098-8d46212e-cf3a-4728-af68-8bc1a799a4e5.png">
+    
+	<img width="756" alt="Screenshot 2023-02-16 at 14 51 58" src="https://user-images.githubusercontent.com/60585/219384034-993ae9ee-1ced-4e89-b853-0815772b42dc.png">
 
     - `query.osm` - die Anfrage an Openstreetmap mit euren Koordinaten
     - `osm.json` - die von Openstreetmap geladenen Rohdaten
