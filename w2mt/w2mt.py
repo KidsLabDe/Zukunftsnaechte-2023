@@ -120,6 +120,7 @@ load_mod_world2minetest = true"""
 def get_args():
 	parser = argparse.ArgumentParser(description="Create a minetest world based on openstreetmap data.")
 	parser.add_argument('-p', '--project', help="Project name")
+	parser.add_argument('-w', '--worldname', help="World name used in world.mt file")
 	parser.add_argument('-d', '--minetest_dir', help="Minetest runtime directory")
 	parser.add_argument('-b', '--backend', default="sqlite3", help="BackEnd Database (sqlite3, leveldb)")
 	parser.add_argument('-v', '--verbose', action='store_true', help="Log to console addionally to logfile.")
@@ -244,7 +245,7 @@ def copy_mod_in_project_dir():
 
 def define_world_for_project():
 	# define world for this project:
-	world_mt_string = world_mt_template.format(args.backend, args.project)
+	world_mt_string = world_mt_template.format(args.backend, args.worldname)
 	# Write the file:
 	world_file = os.path.join(project_path, "world.mt").replace("\"", "")
 	with open(world_file, 'w') as file:
@@ -270,6 +271,10 @@ if not args.project:
 	sys.exit("Projectname is mandatory, use -p or --project followed by projectname.")
 else:
 	args.project = slugify(args.project)
+
+# setup worldname:
+if not args.worldname:
+	args.worldname = args.project
 
 # setup paths:
 if not args.minetest_dir:
