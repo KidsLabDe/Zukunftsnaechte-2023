@@ -1,1 +1,1 @@
-local _={};_[1]="timestamp";return {Mentor={net1={["Briefkasten Netto Kreuz-Gwanden"]={[_[1]]=1675883740,pos={x=-419,y=1,z=-623}},Krankenhaus={[_[1]]=1675883806,pos={x=-128,y=1,z=-271}}}}}
+local _={};_[1]="timestamp";return {Tabita={["-224,-695"]={}},Mentor={net1={Spawn={pos={x=0,y=1,z=2},[_[1]]=1675884136},Realschule={[_[1]]=1675974220,pos={x=-190,y=1,z=-505}},["Briefkasten Netto Kreuz-Gwanden"]={[_[1]]=1675883740,pos={x=-419,y=1,z=-623}},Krankenhaus={[_[1]]=1675883806,pos={x=-128,y=1,z=-271}}}}}

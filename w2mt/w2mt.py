@@ -21,22 +21,112 @@ world_mt_template = """enable_damage = false
 creative_mode = true
 mod_storage_backend = sqlite3
 auth_backend = sqlite3
-backend = sqlite3
+backend = {}
 player_backend = sqlite3
-gameid = minetest
+gameid = antigrief
 world_name = {}
 server_announce = false
-load_mod_world2minetest = mods/world2minetest"""
+
+load_mod_travelnet = true
+
+load_mod_worldeditadditions_commands = true
+load_mod_worldeditadditions = true
+load_mod_worldedit = true
+load_mod_we_undo = true
+load_mod_worldedit_gui = true
+load_mod_worldedit_shortcommands = true
+load_mod_worldeditadditions_farwand = true
+load_mod_worldedit_commands = true
+load_mod_worldeditadditions_core = true
+load_mod_worldedit_brush = true
+
+load_mod_nature_classic = true
+load_mod_skybox = true
+load_mod_beautiflowers = true
+load_mod_unifieddyes = true
+load_mod_skinsdb = true
+load_mod_building_blocks = true
+load_mod_font_api = true
+load_mod_display_api = true
+load_mod_signs_api = true
+load_mod_basic_materials = true
+load_mod_signs_road = true
+load_mod_boards = true
+load_mod_unified_inventory = true
+load_mod_edutest_chatcommands = true
+load_mod_edutest = true
+
+load_mod_homedecor_windows_and_treatments = true
+load_mod_homedecor_trash_cans = true
+load_mod_homedecor_roofing = true
+load_mod_homedecor_pictures_and_paintings = true
+load_mod_homedecor_office = true
+load_mod_homedecor_laundry = true
+load_mod_homedecor_gastronomy = true
+load_mod_homedecor_furniture = true
+load_mod_homedecor_fences = true
+load_mod_homedecor_kitchen = true
+load_mod_homedecor_electronics = true
+load_mod_homedecor_electrical = true
+load_mod_homedecor_doors_and_gates = true
+load_mod_homedecor_furniture_medieval = true
+load_mod_homedecor_common = true
+load_mod_homedecor_cobweb = true
+load_mod_homedecor_climate_control = true
+load_mod_homedecor_books = true
+load_mod_homedecor_bedroom = true
+load_mod_homedecor_bathroom = true
+load_mod_homedecor_tables = true
+load_mod_homedecor_seating = true
+load_mod_homedecor_lighting = true
+load_mod_homedecor_clocks = true
+load_mod_homedecor_exterior = true
+load_mod_homedecor_3d_extras = true
+load_mod_homedecor_wardrobe = true
+load_mod_homedecor_misc = true
+load_mod_homedecor_foyer = true
+
+load_mod_morelights = true
+load_mod_morebricks = true
+load_mod_pickblock = true
+load_mod_colordcement = true
+load_mod_colored_concrete = true
+
+load_mod_mesecons = true
+load_mod_mesecons_delayer = true
+load_mod_mesecons_materials = true
+load_mod_mesecons_lightstone = true
+load_mod_mesecons_button = true
+load_mod_mesecons_commandblock = true
+load_mod_mesecons_detector = true
+load_mod_mesecons_doors = true
+load_mod_mesecons_noteblock = true
+load_mod_mesecons_lamp = true
+load_mod_mesecons_microcontroller = true
+load_mod_mesecons_mvps = true
+load_mod_mesecons_torch = true
+load_mod_mesecons_switch = true
+load_mod_mesecons_wires = true
+load_mod_mesecons_pressureplates = true
+load_mod_mesecons_receiver = true
+load_mod_mesecons_pistons = true
+load_mod_mesecons_gamecompat = true
+load_mod_mesecons_walllever = true
+load_mod_mesecons_extrawires = true
+
+load_mod_world2minetest = true"""
 
 
 def get_args():
 	parser = argparse.ArgumentParser(description="Create a minetest world based on openstreetmap data.")
-	parser.add_argument('-p', '--project', default="UNNAMED_w2mt_project", help="Project name")
+	parser.add_argument('-p', '--project', help="Project name")
+	parser.add_argument('-w', '--worldname', help="World name used in world.mt file")
+	parser.add_argument('-d', '--minetest_dir', help="Minetest runtime directory")
+	parser.add_argument('-b', '--backend', default="sqlite3", help="BackEnd Database (sqlite3, leveldb)")
 	parser.add_argument('-v', '--verbose', action='store_true', help="Log to console addionally to logfile.")
 	parser.add_argument('-q', '--query', type=argparse.FileType("r", encoding="utf-8"), nargs='?', const='project_query', help="File containing a query with Overpass QL, cf. 'https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL'")
 	parser.add_argument('-r', '--reuse_query', action='store_true', help="Reuse project-specific query file.")
 	parser.add_argument('-a', '--area', type=ascii, help="Decimal coordinates of two opposite corners of desired area, separated by commas: 'lat_1, long_1, lat_2, long_2'")
-	parser.add_argument("--output", "-o", type=ascii, help="Output path for map.dat file which is part of the w2mt mod", default="world2minetest/map.dat")
 	return parser.parse_args()
 
 # log to console and/or file, depending on verbose flag:
@@ -99,71 +189,68 @@ def prepare_query_file():
 
 def perform_query():
 	# do the query and store the result in osm.json file:
-	cmd = f'wget -q -O {project_path}/osm.json --post-file={query_path} "https://overpass-api.de/api/interpreter" >> {log_file}'
+	cmd = f'wget -q -O {osm_path} --post-file={query_path} "https://overpass-api.de/api/interpreter" >> {log_file}'
 	log(f"Performing query: '{cmd}' ...")
 	os.system(cmd)
 	log("... done")
 
 def extract_features_from_osm_json():
-	osm_path = os.path.join(project_path, "osm.json")
 	cmd = f'python3 parse_features_osm.py {osm_path} -o {feature_path} >> {log_file}'
 	log(f"Extracting features using this command: '{cmd}' ...")
 	os.system(cmd)
 	log("... done")
 
 def generate_map_from_features():
-	if args.output:
-		cmd = f'python3 generate_map.py --features={feature_path} --output={args.output}>> {log_file}'
+	map_output_dir = os.path.join(project_path, "world2minetest")
+	if not os.path.isdir(map_output_dir):
+		os.makedirs(map_output_dir)
+	if os.path.isdir(map_output_dir):
+		log(f"Project w2mt mod dir '{map_output_dir}‘ created")
 	else:
-		cmd = f'python3 generate_map.py --features={feature_path} >> {log_file}'
+		log(f"Unable to create project w2mt mod dir '{map_output_dir}‘! Check rights!")
+		sys.exit("Unable to create missing project w2mt mod dir.")
+	map_output_path = os.path.join(map_output_dir, "map.dat")
+	cmd = f'python3 generate_map.py --features={feature_path} --output={map_output_path} --createimg >> {log_file}'
 	log(f"Generating map using this command: '{cmd}' ...")
 	os.system(cmd)
 	log("... done")
 
 
-def copy_mod_in_runtime_dir():
+def copy_mod_in_project_dir():
 	# check runtime mods dir:
-	mt_mods_dir = os.path.join(os.environ["MINETEST_GAME_PATH"], "mods/world2minetest")
-	if not os.path.isdir(mt_mods_dir):
-		os.makedirs(mt_mods_dir)
-		if os.path.isdir(mt_mods_dir):
+	w2mt_mod_dir = os.path.join(project_path, "world2minetest")
+	if not os.path.isdir(w2mt_mod_dir):
+		os.makedirs(w2mt_mod_dir)
+		if os.path.isdir(w2mt_mod_dir):
 			log("Directory for world2minetest mod in minetest home did not exist, hence we created it.")
 		else:
 			log("Failed to create directory for world2minetest mod in minetest home.")
 			return
 	#
 	# copy init.lua to runtime place:
-	cmd = f"cp world2minetest/init.lua \"{mt_mods_dir}\"/"
+	cmd = f"cp world2minetest/init.lua \"{w2mt_mod_dir}\"/"
 	os.system(cmd)
 	log("Copied init.lua file to mods folder for world2minetest in minetest home (runtime location).")
 	#
 	# copy map.dat to runtime place:
-	cmd = f"cp {args.output} \"{mt_mods_dir}\"/"
+	cmd = f"cp world2minetest/map.dat \"{w2mt_mod_dir}\"/"
 	os.system(cmd)
 	log("Copied map.dat file to mods folder for world2minetest in minetest home (runtime location).")
 	#
 	# copy mod.conf to runtime place:
-	cmd = f"cp world2minetest/mod.conf \"{mt_mods_dir}/\""
+	cmd = f"cp world2minetest/mod.conf \"{w2mt_mod_dir}\"/"
 	os.system(cmd)
 	log("Copied mod.conf file to mods folder for world2minetest in minetest home (runtime location).")
 
 
 def define_world_for_project():
 	# define world for this project:
-	world_dir = os.path.join(os.environ["MINETEST_GAME_PATH"], "worlds", args.project)
-	if not os.path.isdir(world_dir):
-		os.makedirs(world_dir)
-		if os.path.isdir(world_dir):
-			log(f"Directory for worlds in minetest home did not exist, hence we created it: {world_dir}")
-		else:
-			log("Failed to create directory for worlds in minetest home.")
-			return
-	world_mt_string = world_mt_template.format(args.project)
+	world_mt_string = world_mt_template.format(args.backend, args.worldname)
 	# Write the file:
-	world_file = os.path.join(world_dir, "world.mt").replace("\"", "")
+	world_file = os.path.join(project_path, "world.mt").replace("\"", "")
 	with open(world_file, 'w') as file:
 		file.write(world_mt_string)
-	log(f"World.mt file generated: {world_file}.")
+	log(f"world.mt file generated: {world_file}.")
 
 
 ######### SCRIPT EXECUTION STARTS HERE: ##############
@@ -172,10 +259,12 @@ args = get_args()
 
 # first log starts with the call to this script with all arguments as given:
 log_file = "w2mt.log"
+if os.path.exists(log_file):
+	 os.remove(log_file)
 call_string=""
 for arg in sys.argv:
 	call_string += str(arg) + " "
-log(call_string )
+log(call_string)
 
 # check mandatory options:
 if not args.project:
@@ -183,11 +272,21 @@ if not args.project:
 else:
 	args.project = slugify(args.project)
 
+# setup worldname:
+if not args.worldname:
+	args.worldname = args.project
+
 # setup paths:
-cwd = os.getcwd()
+if not args.minetest_dir:
+	if os.environ["MINETEST_GAME_PATH"]:
+		args.minetest_dir = os.environ["MINETEST_GAME_PATH"]
+	else:
+		args.minetest_dir = os.path.join(os.getcwd(), 'copy_content_to_minetest_dir')
+		log("Neither environment variable MINETEST_GAME_PATH is set nor argument -d is given. Hence we create a local temporary directory in replacement.")
+project_path = os.path.join(args.minetest_dir, "worlds", args.project)
 query_file = "query.osm";
-project_path = os.path.join(cwd, "projects", args.project)
 query_path = os.path.join(project_path, query_file)
+osm_path = os.path.join(project_path, "osm.json")
 feature_file = "features_osm.json"
 feature_path = os.path.join(project_path, feature_file)
 
@@ -197,9 +296,8 @@ perform_query()
 extract_features_from_osm_json()
 generate_map_from_features()
 if os.environ["MINETEST_GAME_PATH"]:
-	copy_mod_in_runtime_dir()
+	copy_mod_in_project_dir()
 	define_world_for_project()
 else:
 	log("Environment variable MINETEST_GAME_PATH not set. In order to manage w2mt mod and worlds you need to set it to the minetest home dir which should contain 'mods' and 'worlds' folders.")
-
 
