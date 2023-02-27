@@ -1,0 +1,1 @@
+local _={};_[1]="timestamp";return {Mentor={net1={Briefkasten={[_[1]]=1677493522,pos={x=583,y=1,z=633}},Kirche={[_[1]]=1677493092,pos={x=-120,y=1,z=2}},Spawn={pos={x=-1,y=1,z=-1},[_[1]]=1677494063},Rossmarkt={pos={x=-277,y=1,z=38},[_[1]]=1677494326},["Lady-Herkomer-Steg"]={pos={x=-815,y=1,z=160},[_[1]]=1677494258},["Briefkasten 2"]={pos={x=-834,y=1,z=-21},[_[1]]=1677494119}}}}
