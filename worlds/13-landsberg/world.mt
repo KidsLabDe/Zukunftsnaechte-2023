@@ -2,12 +2,13 @@ enable_damage = false
 creative_mode = true
 mod_storage_backend = sqlite3
 auth_backend = sqlite3
-backend = sqlite3
+backend = leveldb
 player_backend = sqlite3
 gameid = antigrief
 world_name = 13
 server_announce = false
 
+movement_acceleration_fast = 50
 load_mod_travelnet = true
 
 load_mod_worldeditadditions_commands = true
