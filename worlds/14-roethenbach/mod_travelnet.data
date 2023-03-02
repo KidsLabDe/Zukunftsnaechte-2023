@@ -1,0 +1,1 @@
+local _={};_[1]="timestamp";return {singleplayer={net1={Freibad={[_[1]]=1677759926,pos={x=-356,y=1,z=-443}},spwanpoint={[_[1]]=1677759981,pos={x=0,y=1,z=-1}}}}}
