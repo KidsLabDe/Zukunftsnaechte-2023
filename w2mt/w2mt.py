@@ -191,14 +191,20 @@ def perform_query():
 	# do the query and store the result in osm.json file:
 	cmd = f'wget -q -O {osm_path} --post-file={query_path} "https://overpass-api.de/api/interpreter" >> {log_file}'
 	log(f"Performing query: '{cmd}' ...")
-	os.system(cmd)
-	log("... done")
+	error = os.system(cmd)
+	if error:
+		log("... error!")
+	else:
+		log("... done")
 
 def extract_features_from_osm_json():
 	cmd = f'python3 parse_features_osm.py {osm_path} -o {feature_path} >> {log_file}'
 	log(f"Extracting features using this command: '{cmd}' ...")
-	os.system(cmd)
-	log("... done")
+	error = os.system(cmd)
+	if error:
+		log("... error!")
+	else:
+		log("... done")
 
 def generate_map_from_features():
 	map_output_dir = os.path.join(project_path, "world2minetest")
@@ -212,8 +218,11 @@ def generate_map_from_features():
 	map_output_path = os.path.join(map_output_dir, "map.dat")
 	cmd = f'python3 generate_map.py --features={feature_path} --output={map_output_path} --createimg >> {log_file}'
 	log(f"Generating map using this command: '{cmd}' ...")
-	os.system(cmd)
-	log("... done")
+	error = os.system(cmd)
+	if error:
+		log("... error!")
+	else:
+		log("... done")
 
 
 def copy_mod_in_project_dir():
@@ -233,14 +242,17 @@ def copy_mod_in_project_dir():
 	log("Copied init.lua file to mods folder for world2minetest in minetest home (runtime location).")
 	#
 	# copy map.dat to runtime place:
-	cmd = f"cp world2minetest/map.dat \"{w2mt_mod_dir}\"/"
-	os.system(cmd)
-	log("Copied map.dat file to mods folder for world2minetest in minetest home (runtime location).")
+	# cmd = f"cp world2minetest/map.dat \"{w2mt_mod_dir}\"/"
+	# os.system(cmd)
+	# log("Copied map.dat file to mods folder for world2minetest in minetest home (runtime location).")
 	#
 	# copy mod.conf to runtime place:
 	cmd = f"cp world2minetest/mod.conf \"{w2mt_mod_dir}\"/"
-	os.system(cmd)
-	log("Copied mod.conf file to mods folder for world2minetest in minetest home (runtime location).")
+	error = os.system(cmd)
+	if error:
+		log("Error! Could not copy mod.conf file to mods folder for world2minetest in minetest home (runtime location).")
+	else:
+		log("Copied mod.conf file to mods folder for world2minetest in minetest home (runtime location).")
 
 
 def define_world_for_project():

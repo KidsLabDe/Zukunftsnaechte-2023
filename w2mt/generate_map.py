@@ -205,7 +205,7 @@ for area_level in (areas_low, areas_medium, areas_high):
         surface = area["surface"]
         xx, yy = skimage.draw.polygon(x, y)
         a[yy, xx, 1] = SURFACES[surface]
-        print(f'SETTING SURFACE to {SURFACES[surface]} on {yy} x {xx}')
+        # print(f'SETTING SURFACE to {SURFACES[surface]} on {yy} x {xx}')
         if surface in ("water", "pitch", "playground", "sports_centre", "parking"):
             assert 0 <= int(round(a[yy, xx, 0].mean())) <= 255
             a[yy, xx, 0] = int(round(a[yy, xx, 0].mean()))  # flatten area
@@ -274,7 +274,7 @@ if args.buildings:
                             assert 0 <= z <= 255
                             a[y, x, 0] = z
                         a[y, x, 1] = SURFACES["building_ground"]
-                        print(f'SETTING SURFACE to {SURFACES["building_ground"]} on {yy} x {xx}')
+                        # print(f'SETTING SURFACE to {SURFACES["building_ground"]} on {yy} x {xx}')
                     else:
                         if z > 0:
                             if a[y, x, 2] >= 128:
@@ -289,9 +289,10 @@ if args.buildings:
         print(f"Warning: {count_points_out_of_area}/{count_points_in_area+count_points_out_of_area} building points were outside the area and skipped")
 else:
     for building in features["buildings"]:
+        built_msg_format = "BUILDING drawn with coords {}, {} and height {}"
         x_coords, y_coords = shift_coords(building["x"], building["y"])
         if len(x_coords) < 2:
-            if args.verbose: print("Too few coordinates, ignoring building:", x_coords, y_coords, building)
+            print("Too few coordinates, ignoring building:", x_coords, y_coords, building)
             continue
         elif len(x_coords) == 2:
             xx, yy = skimage.draw.line(x_coords[0], y_coords[0], x_coords[1], y_coords[1])
@@ -302,21 +303,22 @@ else:
         a[yy, xx, 0] = ground_z
         a[yy, xx, 2] = 127 + ground_z + 1
         height = get_building_height(building)
+        print(built_msg_format.format(x_coords, y_coords, height))
         a[yy, xx, 3] = np.maximum(a[yy, xx, 3], ground_z + (height or 1))
 
 for waterway in features["waterways"]:
-    print(f'Processing waterway id: {waterway["osm_id"]}')
+    #print(f'Processing waterway id: {waterway["osm_id"]}')
     x_coords, y_coords = shift_coords(waterway["x"], waterway["y"])
-    print(f'x_coords: {x_coords}')
+    #print(f'x_coords: {x_coords}')
     surface = waterway["surface"]
     surface_id = SURFACES[surface]
-    print(f'surface: {surface} -> surface-id: {surface_id}')
+    #print(f'surface: {surface} -> surface-id: {surface_id}')
     layer = waterway.get("layer", 0)
-    print(f'layer: {layer}')
+    #print(f'layer: {layer}')
     width = WATERWAY_WIDTHS.get(waterway["type"], 3)
-    print(f'width: {width}')
+    #print(f'width: {width}')
     height = -layer*3 if layer < 0 else 0
-    print(f'height: {height}')
+    #print(f'height: {height}')
     for i in range(0, len(x_coords)-1):
         x1, y1 = x_coords[i], y_coords[i]
         x2, y2 = x_coords[i+1], y_coords[i+1]
@@ -372,7 +374,7 @@ for waterway in features["waterways"]:
             assert 0 <= a[yy, xx, 0].mean() - height <= 255
             a[yy, xx, 0] = a[yy, xx, 0].mean() - height
         a[yy, xx, 1] = surface_id
-        print(f'SETTING SURFACE to {surface_id} on {yy} x {xx}')
+        #print(f'SETTING SURFACE to {surface_id} on {yy} x {xx}')
 
 
 for highway in features["highways"]:
@@ -437,7 +439,7 @@ for highway in features["highways"]:
             assert 0 <= a[yy, xx, 0].mean() - height <= 255
             a[yy, xx, 0] = a[yy, xx, 0].mean() - height
         a[yy, xx, 1] = surface_id
-        print(f'SETTING SURFACE to {surface_id} on {yy} x {xx}')
+        #print(f'SETTING SURFACE to {surface_id} on {yy} x {xx}')
         if layer >= 0:
             # remove anything above the surface (buildings, randomly added grass)
             a[yy, xx, 2] = 0
@@ -462,7 +464,7 @@ for deco, decorations in features["decorations"].items():
         if deco in ("tree", "leaf_tree", "conifer", "bush"):
             # place dirt below tree
             a[y, x, 1] = SURFACES["dirt"]
-            print(f'SETTING SURFACE to {SURFACES["dirt"]} on {yy} x {xx}')
+            #print(f'SETTING SURFACE to {SURFACES["dirt"]} on {yy} x {xx}')
 
 
 offset_x = args.offsetx-min_x if args.offsetx is not None else round((max_x - min_x) / 2)
@@ -517,18 +519,18 @@ else:
     changed_blocks = b""
 
 
-# # Print some analysis about all surfaces generated:
-# surfaceNr = {}
-# for i in range(len(a)):
-#     for j in range(len(a[i])):
-#         if a[i][j][1] != 0:
-#             surfaceNr[str(a[i][j][1])] = surfaceNr.get(str(a[i][j][1]), 0)+ 1
-# inverseSurfaceMap = {v: k for k, v in SURFACES.items()}
-# print("Surface analysis in a:")
-# for surf in inverseSurfaceMap:
-#     nr = surfaceNr.get(str(surf), 0)
-#     if nr > 0:
-#         print('{} ({}): {:>12}'.format(inverseSurfaceMap.get(surf), surf, nr))
+# Print some analysis about all surfaces generated:
+surfaceNr = {}
+for i in range(len(a)):
+    for j in range(len(a[i])):
+        if a[i][j][1] != 0:
+            surfaceNr[str(a[i][j][1])] = surfaceNr.get(str(a[i][j][1]), 0)+ 1
+inverseSurfaceMap = {v: k for k, v in SURFACES.items()}
+print("Surface analysis in a:")
+for surf in inverseSurfaceMap:
+    nr = surfaceNr.get(str(surf), 0)
+    if nr > 0:
+        print('{} ({}): {:>12}'.format(inverseSurfaceMap.get(surf), surf, nr))
 
 
 
