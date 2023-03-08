@@ -1,0 +1,1 @@
+local _={};_[1]="timestamp";return {Mentor={net1={Spawnpoint={pos={x=-1,y=1,z=2},[_[1]]=1678097448},["Wochenmarkt St. Kastulus"]={pos={x=2077,y=1,z=1702},[_[1]]=1678130324},Bahnhof={pos={x=1622,y=1,z=1895},[_[1]]=1678098878},Jugendhaus={pos={x=1539,y=1,z=1642},[_[1]]=1678129967},["Kastulus-Realschule"]={pos={x=1712,y=1,z=1009},[_[1]]=1678130622}}}}
