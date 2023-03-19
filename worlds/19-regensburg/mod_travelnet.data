@@ -1,1 +1,1 @@
-return {Mentor={net1={Spawnpoint={timestamp=1679253614,pos={z=0,x=1,y=1}}}}}
+local _={};_[1]="timestamp";return {Mentor={net1={BOS={[_[1]]=1679259817,pos={z=-1836,x=-4406,y=1}},Schlosspark={[_[1]]=1679258834,pos={z=-178,x=-5354,y=1}},Hbf={[_[1]]=1679258914,pos={z=-404,x=-4958,y=1}},["Steinerne Brücke"]={[_[1]]=1679258606,pos={z=638,x=-5188,y=1}},Spawnpoint={[_[1]]=1679253614,pos={z=0,x=1,y=1}},Domplatz={[_[1]]=1679258751,pos={z=381,x=-5163,y=1}}}}}
