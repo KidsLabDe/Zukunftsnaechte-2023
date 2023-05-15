@@ -68,7 +68,7 @@ load_mod_homedecor_misc = true
 load_mod_homedecor_foyer = true
 
 load_mod_morelights = true
-load_mod_morebricks = true
+load_mod_morebricks = false
 load_mod_pickblock = true
 load_mod_colordcement = true
 load_mod_colored_concrete = true
