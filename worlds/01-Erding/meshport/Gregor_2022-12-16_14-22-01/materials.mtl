@@ -1,0 +1,235 @@
+# Created using Meshport (https://github.com/random-geek/meshport).
+
+newmtl morebricks_white.png
+map_Kd /config/.minetest/mods/morebricks/textures/morebricks_white.png
+
+newmtl default_bronze_block.png
+map_Kd /config/.minetest/games/antigrief/mods/default/textures/default_bronze_block.png
+
+newmtl morelights_extras_f_block.png
+map_Kd /config/.minetest/mods/morelights/morelights_extras/textures/morelights_extras_f_block.png
+
+newmtl default_clay.png
+map_Kd /config/.minetest/games/antigrief/mods/default/textures/default_clay.png
+
+newmtl homedecor_generic_metal.png
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_common/textures/homedecor_generic_metal.png
+
+newmtl homedecor_plasma_ball_streamers.png
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_lighting/textures/homedecor_plasma_ball_streamers.png
+
+newmtl default_gold_block.png
+map_Kd /config/.minetest/games/antigrief/mods/default/textures/default_gold_block.png
+
+newmtl (homedecor_glowlight_base.png^homedecor_glowlight_tb_edges.png)^[brighten
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_lighting/textures/homedecor_glowlight_base.png
+
+newmtl homedecor_plasma_ball_glass.png
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_lighting/textures/homedecor_plasma_ball_glass.png
+
+newmtl homedecor_generic_quilted_paper.png
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_common/textures/homedecor_generic_quilted_paper.png
+
+newmtl homedecor_analog_clock_face.png
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_clocks/textures/homedecor_analog_clock_face.png
+
+newmtl homedecor_analog_clock_back.png
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_clocks/textures/homedecor_analog_clock_back.png
+
+newmtl homedecor_desk_drawers.png
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_office/textures/homedecor_desk_drawers.png
+
+newmtl default_wood.png
+map_Kd /config/.minetest/games/antigrief/mods/default/textures/default_wood.png
+
+newmtl homedecor_office_chair_basic.png
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_seating/textures/homedecor_office_chair_basic.png
+
+newmtl homedecor_dartboard.png
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_misc/textures/homedecor_dartboard.png
+
+newmtl homedecor_alarm_clock_top.png
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_clocks/textures/homedecor_alarm_clock_top.png
+
+newmtl homedecor_alarm_clock_bottom.png
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_clocks/textures/homedecor_alarm_clock_bottom.png
+
+newmtl homedecor_alarm_clock_sides.png
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_clocks/textures/homedecor_alarm_clock_sides.png
+
+newmtl homedecor_alarm_clock_sides.png^[transformFX
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_clocks/textures/homedecor_alarm_clock_sides.png
+
+newmtl homedecor_alarm_clock_back.png
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_clocks/textures/homedecor_alarm_clock_back.png
+
+newmtl travelnet_travelnet_front.png
+map_Kd /config/.minetest/mods/travelnet/textures/travelnet_travelnet_front.png
+
+newmtl travelnet_travelnet_back.png
+map_Kd /config/.minetest/mods/travelnet/textures/travelnet_travelnet_back.png
+
+newmtl travelnet_travelnet_side.png
+map_Kd /config/.minetest/mods/travelnet/textures/travelnet_travelnet_side.png
+
+newmtl xpanes_trapdoor_steel_bar.png^[transform6
+map_Kd /config/.minetest/games/antigrief/mods/xpanes/textures/xpanes_trapdoor_steel_bar.png
+
+newmtl abriglass_lightred.png
+map_Kd /config/.minetest/mods/abriglass/textures/abriglass_lightred.png
+
+newmtl travelnet_elevator_inside_controls.png
+map_Kd /config/.minetest/mods/travelnet/textures/travelnet_elevator_inside_controls.png
+
+newmtl travelnet_elevator_sides_outside.png
+map_Kd /config/.minetest/mods/travelnet/textures/travelnet_elevator_sides_outside.png
+
+newmtl travelnet_elevator_inside_ceiling.png
+map_Kd /config/.minetest/mods/travelnet/textures/travelnet_elevator_inside_ceiling.png
+
+newmtl travelnet_elevator_inside_floor.png
+map_Kd /config/.minetest/mods/travelnet/textures/travelnet_elevator_inside_floor.png
+
+newmtl moreblocks_clean_glass.png
+map_Kd /config/.minetest/mods/moreblocks/textures/moreblocks_clean_glass.png
+
+newmtl default_cobble.png
+map_Kd /config/.minetest/games/antigrief/mods/default/textures/default_cobble.png
+
+newmtl default_glass.png
+map_Kd /config/.minetest/games/antigrief/mods/default/textures/default_glass.png
+
+newmtl default_stone_block.png
+map_Kd /config/.minetest/games/antigrief/mods/default/textures/default_stone_block.png
+
+newmtl homedecor_cobweb_plantlike.png
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_cobweb/textures/homedecor_cobweb_plantlike.png
+
+newmtl homedecor_plasma_storm.png^[multiply:#eeeeee
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_lighting/textures/homedecor_plasma_storm.png
+
+newmtl homedecor_generic_wood_plain.png
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_wardrobe/textures/homedecor_generic_wood_plain.png
+
+newmtl lrfurn_sofa_bottom.png
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_seating/textures/lrfurn_sofa_bottom.png
+
+newmtl default_torch_on_floor_animated.png
+map_Kd /config/.minetest/games/antigrief/mods/default/textures/default_torch_on_floor_animated.png
+
+newmtl homedecor_ac.png
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_climate_control/textures/homedecor_ac.png
+
+newmtl travelnet_elevator_front.png
+map_Kd /config/.minetest/mods/travelnet/textures/travelnet_elevator_front.png
+
+newmtl default_obsidian_block.png
+map_Kd /config/.minetest/games/antigrief/mods/default/textures/default_obsidian_block.png
+
+newmtl xpanes_trapdoor_steel_bar_side.png^[transform2
+map_Kd /config/.minetest/games/antigrief/mods/xpanes/textures/xpanes_trapdoor_steel_bar_side.png
+
+newmtl basic_materials_chain_brass.png
+map_Kd /config/.minetest/mods/basic_materials/textures/basic_materials_chain_brass.png
+
+newmtl default_snow.png
+map_Kd /config/.minetest/games/antigrief/mods/default/textures/default_snow.png
+
+newmtl default_apple.png
+map_Kd /config/.minetest/games/antigrief/mods/default/textures/default_apple.png
+
+newmtl xpanes_trapdoor_steel_bar_side.png^[transform1
+map_Kd /config/.minetest/games/antigrief/mods/xpanes/textures/xpanes_trapdoor_steel_bar_side.png
+
+newmtl homedecor_generic_plastic.png
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_common/textures/homedecor_generic_plastic.png
+
+newmtl xpanes_bar_top.png
+map_Kd /config/.minetest/games/antigrief/mods/xpanes/textures/xpanes_bar_top.png
+
+newmtl xpanes_trapdoor_steel_bar_side.png^[transform3
+map_Kd /config/.minetest/games/antigrief/mods/xpanes/textures/xpanes_trapdoor_steel_bar_side.png
+
+newmtl default_water_source_animated.png
+map_Kd /config/.minetest/games/antigrief/mods/default/textures/default_water_source_animated.png
+
+newmtl xpanes_trapdoor_steel_bar.png^[transform46
+map_Kd /config/.minetest/games/antigrief/mods/xpanes/textures/xpanes_trapdoor_steel_bar.png
+
+newmtl forniture_torch_flame.png
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_lighting/textures/forniture_torch_flame.png
+
+newmtl forniture_coal.png
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_furniture_medieval/textures/forniture_coal.png
+
+newmtl default_water.png
+map_Kd /config/.minetest/games/antigrief/mods/default/textures/default_water.png
+
+newmtl default_water_flowing_animated.png
+map_Kd /config/.minetest/games/antigrief/mods/default/textures/default_water_flowing_animated.png
+
+newmtl default_fence_aspen_wood.png
+map_Kd /config/.minetest/games/antigrief/mods/default/textures/default_fence_aspen_wood.png
+
+newmtl building_blocks_marble.png
+map_Kd /config/.minetest/mods/homedecor_modpack/building_blocks/textures/building_blocks_marble.png
+
+newmtl default_silver_sandstone.png
+map_Kd /config/.minetest/games/antigrief/mods/default/textures/default_silver_sandstone.png
+
+newmtl morelights_vintage_block_glass.png^morelights_vintage_block_frame.png
+map_Kd /config/.minetest/mods/morelights/morelights_vintage/textures/morelights_vintage_block_glass.png
+
+newmtl xpanes_trapdoor_steel_bar_side.png
+map_Kd /config/.minetest/games/antigrief/mods/xpanes/textures/xpanes_trapdoor_steel_bar_side.png
+
+newmtl default_obsidian_brick.png
+map_Kd /config/.minetest/games/antigrief/mods/default/textures/default_obsidian_brick.png
+
+newmtl default_steel_block.png
+map_Kd /config/.minetest/games/antigrief/mods/default/textures/default_steel_block.png
+
+newmtl homedecor_calendar.png
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_office/textures/homedecor_calendar.png
+
+newmtl default_silver_sandstone_block.png
+map_Kd /config/.minetest/games/antigrief/mods/default/textures/default_silver_sandstone_block.png
+
+newmtl jeija_wall_button_off.png
+map_Kd /config/.minetest/mods/mesecons/mesecons_button/textures/jeija_wall_button_off.png
+
+newmtl abriglass_oneway_plain_glass.png
+map_Kd /config/.minetest/mods/abriglass/textures/abriglass_oneway_plain_glass.png
+
+newmtl lrfurn_upholstery.png
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_seating/textures/lrfurn_upholstery.png
+
+newmtl homedecor_alarm_clock_front.png
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_clocks/textures/homedecor_alarm_clock_front.png
+
+newmtl atlatc_oppanel.png
+map_Kd /config/.minetest/mods/advtrains/advtrains_luaautomation/textures/atlatc_oppanel.png
+
+newmtl abriglass_oneway_wall.png^[colorize:#E6E6FA:200
+map_Kd /config/.minetest/mods/abriglass/textures/abriglass_oneway_wall.png
+
+newmtl homedecor_outlet_edges.png
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_electrical/textures/homedecor_outlet_edges.png
+
+newmtl homedecor_outlet_back.png
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_electrical/textures/homedecor_outlet_back.png
+
+newmtl homedecor_openframe_bookshelf_books.png
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_furniture/textures/homedecor_openframe_bookshelf_books.png
+
+newmtl xpanes_bar.png
+map_Kd /config/.minetest/games/antigrief/mods/xpanes/textures/xpanes_bar.png
+
+newmtl (homedecor_glowlight_base.png^homedecor_glowlight_thick_sides_edges.png)^[brighten
+map_Kd /config/.minetest/mods/homedecor_modpack/homedecor_lighting/textures/homedecor_glowlight_base.png
+
+newmtl jeija_wall_button_sides.png
+map_Kd /config/.minetest/mods/mesecons/mesecons_button/textures/jeija_wall_button_sides.png
+
+newmtl abriglass_oneway_face.png^[colorize:#F8F8FF:200
+map_Kd /config/.minetest/mods/abriglass/textures/abriglass_oneway_face.png
