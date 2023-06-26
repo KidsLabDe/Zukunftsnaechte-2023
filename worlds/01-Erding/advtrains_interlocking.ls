@@ -8,9 +8,9 @@ E
 Srs_locks:T
 E
 Srs_callbacks:T
-Sts:T
-E
 Slck:T
+E
+Sts:T
 E
 E
 Sinfluence_points:T

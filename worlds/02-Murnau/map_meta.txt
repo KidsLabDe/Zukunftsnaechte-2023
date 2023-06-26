@@ -33,17 +33,10 @@ mg_biome_np_humidity_blend = {
 mgflat_np_filler_depth = {
 	flags = defaults
 	lacunarity = 2
-<<<<<<< HEAD
-	persistence = 0.699999988
-	seed = 261
-	spread = (150,150,150)
-	scale = 1.20000005
-=======
 	persistence = 0.7
 	seed = 261
 	spread = (150,150,150)
 	scale = 1.2
->>>>>>> 3244bb1ec18d71494369a1d08e40462bcda6a9be
 	octaves = 3
 	offset = 0
 }
@@ -58,22 +51,13 @@ mg_biome_np_heat_blend = {
 	octaves = 2
 	offset = 0
 }
-<<<<<<< HEAD
-mgflat_cavern_threshold = 0.699999988
-mg_name = flat
-=======
 mgflat_cavern_threshold = 0.7
 mg_name = singlenode
->>>>>>> 3244bb1ec18d71494369a1d08e40462bcda6a9be
 mgflat_spflags = nolakes, hills, nocaverns
 chunksize = 5
 water_level = 1
 mapgen_limit = 31007
-<<<<<<< HEAD
-mgflat_lake_threshold = -0.449999988
-=======
 mgflat_lake_threshold = -0.45
->>>>>>> 3244bb1ec18d71494369a1d08e40462bcda6a9be
 mgflat_ground_level = 8
 mg_biome_np_heat = {
 	flags = defaults
@@ -99,20 +83,12 @@ mgflat_small_cave_num_min = 0
 mgflat_np_dungeons = {
 	flags = defaults
 	lacunarity = 2
-<<<<<<< HEAD
-	persistence = 0.800000012
-=======
 	persistence = 0.8
->>>>>>> 3244bb1ec18d71494369a1d08e40462bcda6a9be
 	seed = 0
 	spread = (500,500,500)
 	scale = 0.5
 	octaves = 2
-<<<<<<< HEAD
-	offset = 0.899999976
-=======
 	offset = 0.9
->>>>>>> 3244bb1ec18d71494369a1d08e40462bcda6a9be
 }
 seed = 5217443189641581071
 mgflat_small_cave_num_max = 0
@@ -121,35 +97,22 @@ mgflat_large_cave_flooded = 0.5
 mgflat_np_cavern = {
 	flags = defaults
 	lacunarity = 2
-<<<<<<< HEAD
-	persistence = 0.629999995
-=======
 	persistence = 0.63
->>>>>>> 3244bb1ec18d71494369a1d08e40462bcda6a9be
 	seed = 723
 	spread = (384,128,384)
 	scale = 1
 	octaves = 5
 	offset = 0
 }
-<<<<<<< HEAD
-mgflat_hill_threshold = 0.449999988
-mgflat_cave_width = 0.0900000036
-=======
 mgflat_hill_threshold = 0.45
 mgflat_cave_width = 0.09
->>>>>>> 3244bb1ec18d71494369a1d08e40462bcda6a9be
 mgflat_hill_steepness = 64
 mgflat_lake_steepness = 48
 mgflat_cavern_limit = -256
 mgflat_np_terrain = {
 	flags = defaults
 	lacunarity = 2
-<<<<<<< HEAD
-	persistence = 0.600000024
-=======
 	persistence = 0.6
->>>>>>> 3244bb1ec18d71494369a1d08e40462bcda6a9be
 	seed = 7244
 	spread = (600,600,600)
 	scale = 1
