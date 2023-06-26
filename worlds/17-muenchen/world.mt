@@ -2,7 +2,7 @@ enable_damage = false
 creative_mode = true
 mod_storage_backend = sqlite3
 auth_backend = sqlite3
-backend = sqlite3
+backend = leveldb
 player_backend = sqlite3
 gameid = antigrief
 world_name = 17
@@ -68,7 +68,7 @@ load_mod_homedecor_misc = true
 load_mod_homedecor_foyer = true
 
 load_mod_morelights = true
-load_mod_morebricks = true
+load_mod_morebricks = false
 load_mod_pickblock = true
 load_mod_colordcement = true
 load_mod_colored_concrete = true
@@ -95,7 +95,7 @@ load_mod_mesecons_gamecompat = true
 load_mod_mesecons_walllever = true
 load_mod_mesecons_extrawires = true
 
-load_mod_world2minetest = true
+load_mod_world2minetest = false
 
 load_mod_vbots = false
 load_mod_tt = false
